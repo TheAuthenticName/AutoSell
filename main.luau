@@ -164,8 +164,6 @@ local function Sell()
 						and CheckRarity(Item.name, Item.rarity) == true
 						and Item.levelReq < Config.LobbySettings.AutoSell.ItemLevelRequirement
 					then
-						local ItemSlot = tonumber(string.gsub(index, "%D", ""))
-
 						if
 							FolderName == "weapons"
 							and not Item.description
@@ -174,6 +172,9 @@ local function Sell()
 							and not Item.favorite
 						then
 							if not Config.LobbySettings.AutoSell.TestSell then
+								local ItemSlot = tonumber(string.gsub(index, "%D", ""))
+								print(`Item Name: {Item.name}, ImageID: {Item.imageId}, Slot Number: {ItemSlot}`)
+
 								Remotes:WaitForChild("sellItemEvent"):FireServer({
 									[1] = {
 										["chest"] = {},
@@ -193,6 +194,9 @@ local function Sell()
 							and not Item.favorite
 						then
 							if not Config.LobbySettings.AutoSell.TestSell then
+								local ItemSlot = tonumber(string.gsub(index, "%D", ""))
+								print(`Item Name: {Item.name}, ImageID: {Item.imageId}, Slot Number: {ItemSlot}`)
+
 								Remotes:WaitForChild("sellItemEvent"):FireServer({
 									[1] = {
 										["chest"] = {},
@@ -212,6 +216,9 @@ local function Sell()
 							and not Item.favorite
 						then
 							if not Config.LobbySettings.AutoSell.TestSell then
+								local ItemSlot = tonumber(string.gsub(index, "%D", ""))
+								print(`Item Name: {Item.name}, ImageID: {Item.imageId}, Slot Number: {ItemSlot}`)
+
 								Remotes:WaitForChild("sellItemEvent"):FireServer({
 									[1] = {
 										["chest"] = { ItemSlot },
@@ -226,6 +233,9 @@ local function Sell()
 							end
 						elseif FolderName == "rings" and not Item.favorite and Item.effects then
 							if not Config.LobbySettings.AutoSell.TestSell then
+								local ItemSlot = tonumber(string.gsub(index, "%D", ""))
+								print(`Item Name: {Item.name}, ImageID: {Item.imageId}, Slot Number: {ItemSlot}`)
+
 								Remotes:WaitForChild("sellItemEvent"):FireServer({
 									[1] = {
 										["chest"] = {},
@@ -249,8 +259,6 @@ local function Sell()
 						List[Item.name] = 1
 					end
 
-					local ItemSlot = tonumber(string.gsub(index, "%D", ""))
-
 					if not Item.equipped.e and not Item.equipped.q then
 						if
 							CheckRarity(Item.name, Item.rarity)
@@ -258,6 +266,9 @@ local function Sell()
 						then
 							if Config.LobbySettings.AutoSell.Keep2Spells and List[Item.name] > 2 then
 								if not Config.LobbySettings.AutoSell.TestSell then
+									local ItemSlot = tonumber(string.gsub(index, "%D", ""))
+									print(`Item Name: {Item.name}, ImageID: {Item.imageId}, Slot Number: {ItemSlot}`)
+
 									Remotes:WaitForChild("sellItemEvent"):FireServer({
 										[1] = {
 											["chest"] = {},
