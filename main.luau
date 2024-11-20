@@ -159,17 +159,12 @@ local function Sell()
 				-- Looping Through The Folder To Get The Items
 				for index, Item in next, ItemFolder do
 					-- Checking The Item Meets The Reqs
-
 					if
 						not Item.equipped
 						and CheckRarity(Item.name, Item.rarity) == true
 						and Item.levelReq < Config.LobbySettings.AutoSell.ItemLevelRequirement
 					then
-						print(Item.name)
-						print(Item.imageId)
-
 						local ItemSlot = tonumber(string.gsub(index, "%D", ""))
-						print("Type: " .. type(ItemSlot) .. " Value: " .. ItemSlot)
 
 						if
 							FolderName == "weapons"
@@ -254,11 +249,7 @@ local function Sell()
 						List[Item.name] = 1
 					end
 
-					print(Item.name)
-					print(Item.imageId)
-
-					local ItemSlot = string.gsub(index, "%D", "")
-					print("Type: " .. type(ItemSlot) .. " Value: " .. ItemSlot)
+					local ItemSlot = tonumber(string.gsub(index, "%D", ""))
 
 					if not Item.equipped.e and not Item.equipped.q then
 						if
