@@ -165,10 +165,10 @@ local function Sell()
 						and CheckRarity(Item.name, Item.rarity) == true
 						and Item.levelReq < Config.LobbySettings.AutoSell.ItemLevelRequirement
 					then
+						print("Item Name: " .. Item.name .. "ImageId: " .. Item.imageID)
+
 						local ItemSlot = tonumber(string.gsub(index, "%D", ""))
 						print("Type: " .. type(ItemSlot) .. " Value: " .. ItemSlot)
-
-						print("Item Name: " .. Item.name .. "ImageId: " .. Item.imageID)
 
 						if
 							FolderName == "weapons"
@@ -253,10 +253,10 @@ local function Sell()
 						List[Item.name] = 1
 					end
 
+					print("Item Name: " .. Item.name .. "ImageId: " .. Item.imageID)
+
 					local ItemSlot = string.gsub(index, "%D", "")
 					print("Type: " .. type(ItemSlot) .. " Value: " .. ItemSlot)
-
-					print("Item Name: " .. Item.name .. "ImageId: " .. Item.imageID)
 
 					if not Item.equipped.e and not Item.equipped.q then
 						if
