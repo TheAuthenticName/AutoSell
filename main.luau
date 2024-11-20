@@ -175,17 +175,19 @@ local function Sell()
 								local ItemSlot = tonumber(string.gsub(index, "%D", ""))
 								print(`Item Name: {Item.name}, ImageID: {Item.imageId}, Slot Number: {ItemSlot}`)
 
-								Remotes:WaitForChild("sellItemEvent"):FireServer({
-									[1] = {
-										["chest"] = {},
-										["helmet"] = {},
-										["ability"] = {},
-										["ring"] = {},
-										["weapon"] = { ItemSlot },
-									},
-								})
-							else
-								print("Test Sell: " .. Item.name)
+								if ItemSlot ~= nil then
+									Remotes:WaitForChild("sellItemEvent"):FireServer({
+										[1] = {
+											["chest"] = {},
+											["helmet"] = {},
+											["ability"] = {},
+											["ring"] = {},
+											["weapon"] = { ItemSlot },
+										},
+									})
+								else
+									print("Test Sell: " .. Item.name)
+								end
 							end
 						elseif
 							FolderName == "helmets"
@@ -197,17 +199,19 @@ local function Sell()
 								local ItemSlot = tonumber(string.gsub(index, "%D", ""))
 								print(`Item Name: {Item.name}, ImageID: {Item.imageId}, Slot Number: {ItemSlot}`)
 
-								Remotes:WaitForChild("sellItemEvent"):FireServer({
-									[1] = {
-										["chest"] = {},
-										["helmet"] = { ItemSlot },
-										["ability"] = {},
-										["ring"] = {},
-										["weapon"] = {},
-									},
-								})
-							else
-								print("Test Sell: " .. Item.name)
+								if ItemSlot ~= nil then
+									Remotes:WaitForChild("sellItemEvent"):FireServer({
+										[1] = {
+											["chest"] = {},
+											["helmet"] = { ItemSlot },
+											["ability"] = {},
+											["ring"] = {},
+											["weapon"] = {},
+										},
+									})
+								else
+									print("Test Sell: " .. Item.name)
+								end
 							end
 						elseif
 							FolderName == "chests"
@@ -219,34 +223,38 @@ local function Sell()
 								local ItemSlot = tonumber(string.gsub(index, "%D", ""))
 								print(`Item Name: {Item.name}, ImageID: {Item.imageId}, Slot Number: {ItemSlot}`)
 
-								Remotes:WaitForChild("sellItemEvent"):FireServer({
-									[1] = {
-										["chest"] = { ItemSlot },
-										["helmet"] = {},
-										["ability"] = {},
-										["ring"] = {},
-										["weapon"] = {},
-									},
-								})
-							else
-								print("Test Sell: " .. Item.name)
+								if ItemSlot ~= nil then
+									Remotes:WaitForChild("sellItemEvent"):FireServer({
+										[1] = {
+											["chest"] = { ItemSlot },
+											["helmet"] = {},
+											["ability"] = {},
+											["ring"] = {},
+											["weapon"] = {},
+										},
+									})
+								else
+									print("Test Sell: " .. Item.name)
+								end
 							end
 						elseif FolderName == "rings" and not Item.favorite and Item.effects then
 							if not Config.LobbySettings.AutoSell.TestSell then
 								local ItemSlot = tonumber(string.gsub(index, "%D", ""))
 								print(`Item Name: {Item.name}, ImageID: {Item.imageId}, Slot Number: {ItemSlot}`)
 
-								Remotes:WaitForChild("sellItemEvent"):FireServer({
-									[1] = {
-										["chest"] = {},
-										["helmet"] = {},
-										["ability"] = {},
-										["ring"] = { ItemSlot },
-										["weapon"] = {},
-									},
-								})
-							else
-								print("Test Sell: " .. Item.name)
+								if ItemSlot ~= nil then
+									Remotes:WaitForChild("sellItemEvent"):FireServer({
+										[1] = {
+											["chest"] = {},
+											["helmet"] = {},
+											["ability"] = {},
+											["ring"] = { ItemSlot },
+											["weapon"] = {},
+										},
+									})
+								else
+									print("Test Sell: " .. Item.name)
+								end
 							end
 						end
 					end
@@ -269,17 +277,19 @@ local function Sell()
 									local ItemSlot = tonumber(string.gsub(index, "%D", ""))
 									print(`Item Name: {Item.name}, ImageID: {Item.imageId}, Slot Number: {ItemSlot}`)
 
-									Remotes:WaitForChild("sellItemEvent"):FireServer({
-										[1] = {
-											["chest"] = {},
-											["helmet"] = {},
-											["ability"] = { ItemSlot },
-											["ring"] = {},
-											["weapon"] = {},
-										},
-									})
-								else
-									print("Test Sell: " .. Item.name)
+									if ItemSlot ~= nil then
+										Remotes:WaitForChild("sellItemEvent"):FireServer({
+											[1] = {
+												["chest"] = {},
+												["helmet"] = {},
+												["ability"] = { ItemSlot },
+												["ring"] = {},
+												["weapon"] = {},
+											},
+										})
+									else
+										print("Test Sell: " .. Item.name)
+									end
 								end
 							end
 						end
