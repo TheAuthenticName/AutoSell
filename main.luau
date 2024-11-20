@@ -167,6 +167,9 @@ local function Sell()
 					then
 						local ItemSlot = tonumber(string.gsub(index, "%D", ""))
 						print("Type: " .. type(ItemSlot) .. " Value: " .. ItemSlot)
+
+						print("Item Name: " .. Item.name .. "ImageId: " .. Item.imageID)
+
 						if
 							FolderName == "weapons"
 							and not Item.description
@@ -252,6 +255,8 @@ local function Sell()
 
 					local ItemSlot = string.gsub(index, "%D", "")
 					print("Type: " .. type(ItemSlot) .. " Value: " .. ItemSlot)
+
+					print("Item Name: " .. Item.name .. "ImageId: " .. Item.imageID)
 
 					if not Item.equipped.e and not Item.equipped.q then
 						if
