@@ -165,7 +165,8 @@ local function Sell()
 						and CheckRarity(Item.name, Item.rarity) == true
 						and Item.levelReq < Config.LobbySettings.AutoSell.ItemLevelRequirement
 					then
-						print("Item Name: " .. Item.name .. "ImageId: " .. Item.imageID)
+						print(Item.name)
+						print(Item.imageId)
 
 						local ItemSlot = tonumber(string.gsub(index, "%D", ""))
 						print("Type: " .. type(ItemSlot) .. " Value: " .. ItemSlot)
@@ -253,7 +254,8 @@ local function Sell()
 						List[Item.name] = 1
 					end
 
-					print("Item Name: " .. Item.name .. "ImageId: " .. Item.imageID)
+					print(Item.name)
+					print(Item.imageId)
 
 					local ItemSlot = string.gsub(index, "%D", "")
 					print("Type: " .. type(ItemSlot) .. " Value: " .. ItemSlot)
