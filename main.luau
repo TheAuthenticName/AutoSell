@@ -166,6 +166,7 @@ local function Sell()
 						and Item.levelReq < Config.LobbySettings.AutoSell.ItemLevelRequirement
 					then
 						local ItemSlot = tonumber(string.gsub(index, "%D", ""))
+						print(type(ItemSlot) .. ItemSlot)
 						if
 							FolderName == "weapons"
 							and not Item.description
@@ -253,6 +254,8 @@ local function Sell()
 					print("SUBBED: " .. string.gsub(index, "%D", ""))
 
 					local ItemSlot = string.gsub(index, "%D", "")
+
+					print(type(ItemSlot) .. ItemSlot)
 
 					warn("ITEM SLOT: " .. ItemSlot)
 
