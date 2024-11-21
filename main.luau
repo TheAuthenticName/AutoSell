@@ -86,7 +86,7 @@ local Config = {
 		},
 		AutoSell = {
 			Enabled = true,
-			TestSell = false,
+			TestSell = true,
 			ItemLevelRequirement = 216,
 			Keep2Spells = true,
 			KeepRarities = {
@@ -130,7 +130,7 @@ local function Log(level: string, title: string, info: string)
 	if level == "info" then
 		print(`[{title}]: {info}`)
 	elseif level == "debug" then
-		print(`[{title}]: {info}`)
+		warn(`[{title}]: {info}`)
 	end
 end
 
