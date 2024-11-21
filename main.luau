@@ -181,9 +181,13 @@ local function Sell()
 						then
 							if not Config.LobbySettings.AutoSell.TestSell then
 								local ItemSlot = tonumber(string.gsub(index, "%D", ""))
-								Log("debug", `Item Name: {Item.name}, ImageID: {Item.imageId}, Slot Number: {ItemSlot}`)
 
 								if ItemSlot ~= nil then
+									Log(
+										"debug",
+										`Item Name: {Item.name}, Rarity: {Item.rarity}, Slot Number: {ItemSlot}`
+									)
+
 									Remotes:WaitForChild("sellItemEvent"):FireServer({
 										[1] = {
 											["chest"] = {},
@@ -205,9 +209,13 @@ local function Sell()
 						then
 							if not Config.LobbySettings.AutoSell.TestSell then
 								local ItemSlot = tonumber(string.gsub(index, "%D", ""))
-								Log("debug", `Item Name: {Item.name}, ImageID: {Item.imageId}, Slot Number: {ItemSlot}`)
 
 								if ItemSlot ~= nil then
+									Log(
+										"debug",
+										`Item Name: {Item.name}, Rarity: {Item.rarity}, Slot Number: {ItemSlot}`
+									)
+
 									Remotes:WaitForChild("sellItemEvent"):FireServer({
 										[1] = {
 											["chest"] = {},
@@ -229,9 +237,13 @@ local function Sell()
 						then
 							if not Config.LobbySettings.AutoSell.TestSell then
 								local ItemSlot = tonumber(string.gsub(index, "%D", ""))
-								Log("debug", `Item Name: {Item.name}, ImageID: {Item.imageId}, Slot Number: {ItemSlot}`)
 
 								if ItemSlot ~= nil then
+									Log(
+										"debug",
+										`Item Name: {Item.name}, Rarity: {Item.rarity}, Slot Number: {ItemSlot}`
+									)
+
 									Remotes:WaitForChild("sellItemEvent"):FireServer({
 										[1] = {
 											["chest"] = { ItemSlot },
@@ -248,9 +260,13 @@ local function Sell()
 						elseif FolderName == "rings" and not Item.favorite and Item.effects then
 							if not Config.LobbySettings.AutoSell.TestSell then
 								local ItemSlot = tonumber(string.gsub(index, "%D", ""))
-								Log("debug", `Item Name: {Item.name}, ImageID: {Item.imageId}, Slot Number: {ItemSlot}`)
 
 								if ItemSlot ~= nil then
+									Log(
+										"debug",
+										`Item Name: {Item.name}, Rarity: {Item.rarity}, Slot Number: {ItemSlot}`
+									)
+
 									Remotes:WaitForChild("sellItemEvent"):FireServer({
 										[1] = {
 											["chest"] = {},
@@ -283,12 +299,13 @@ local function Sell()
 							if Config.LobbySettings.AutoSell.Keep2Spells and List[Item.name] > 2 then
 								if not Config.LobbySettings.AutoSell.TestSell then
 									local ItemSlot = tonumber(string.gsub(index, "%D", ""))
-									Log(
-										"debug",
-										`Item Name: {Item.name}, ImageID: {Item.imageId}, Slot Number: {ItemSlot}`
-									)
 
 									if ItemSlot ~= nil then
+										Log(
+											"debug",
+											`Item Name: {Item.name}, Rarity: {Item.rarity}, Slot Number: {ItemSlot}`
+										)
+
 										Remotes:WaitForChild("sellItemEvent"):FireServer({
 											[1] = {
 												["chest"] = {},
