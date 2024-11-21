@@ -198,7 +198,7 @@ local function Sell()
 										},
 									})
 								else
-									Log("info", "Test Sell", Item.name)
+									Log("info", "Test Sell", `Name: {Item.name}, Number: {SlotNumber}`)
 								end
 							end
 						elseif
@@ -226,7 +226,7 @@ local function Sell()
 										},
 									})
 								else
-									Log("info", "Test Sell", Item.name)
+									Log("info", "Test Sell", `Name: {Item.name}, Number: {SlotNumber}`)
 								end
 							end
 						elseif
@@ -254,7 +254,7 @@ local function Sell()
 										},
 									})
 								else
-									Log("info", "Test Sell", Item.name)
+									Log("info", "Test Sell", `Name: {Item.name}, Number: {SlotNumber}`)
 								end
 							end
 						elseif FolderName == "rings" and not Item.favorite and Item.effects then
@@ -277,7 +277,7 @@ local function Sell()
 										},
 									})
 								else
-									Log("info", "Test Sell", Item.name)
+									Log("info", "Test Sell", `Name: {Item.name}, Number: {SlotNumber}`)
 								end
 							end
 						end
@@ -316,7 +316,7 @@ local function Sell()
 											},
 										})
 									else
-										Log("info", "Test Sell", Item.name)
+										Log("info", "Test Sell", `Name: {Item.name}, Number: {SlotNumber}`)
 									end
 								end
 							end
