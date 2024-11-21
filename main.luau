@@ -126,11 +126,11 @@ local function GetInventory(): {}
 	return Remotes:WaitForChild("reloadInvy"):InvokeServer()
 end
 
-local function Log(level: string, info: string)
+local function Log(level: string, title: string, info: string)
 	if level == "info" then
-		print(info)
+		print(`[{title}]: {info}`)
 	elseif level == "debug" then
-		warn(info)
+		print(`[{title}]: {info}`)
 	end
 end
 
@@ -179,26 +179,26 @@ local function Sell()
 							and not Item.health
 							and not Item.favorite
 						then
-							if not Config.LobbySettings.AutoSell.TestSell then
-								local ItemSlot = tonumber(string.gsub(index, "%D", ""))
+							local SlotNumber = tonumber(string.gsub(index, "%D", ""))
+							if SlotNumber ~= nil then
+								Log(
+									"debug",
+									"Item Info",
+									`Name: {Item.name}, Rarity: {Item.rarity}, Number: {SlotNumber}`
+								)
 
-								if ItemSlot ~= nil then
-									Log(
-										"debug",
-										`Item Name: {Item.name}, Rarity: {Item.rarity}, Slot Number: {ItemSlot}`
-									)
-
+								if not Config.LobbySettings.AutoSell.TestSell then
 									Remotes:WaitForChild("sellItemEvent"):FireServer({
 										[1] = {
 											["chest"] = {},
 											["helmet"] = {},
 											["ability"] = {},
 											["ring"] = {},
-											["weapon"] = { ItemSlot },
+											["weapon"] = { SlotNumber },
 										},
 									})
 								else
-									Log("info", `Test Sell: {Item.name}`)
+									Log("info", "Test Sell", Item.name)
 								end
 							end
 						elseif
@@ -207,26 +207,26 @@ local function Sell()
 							and not Item.effects
 							and not Item.favorite
 						then
-							if not Config.LobbySettings.AutoSell.TestSell then
-								local ItemSlot = tonumber(string.gsub(index, "%D", ""))
+							local SlotNumber = tonumber(string.gsub(index, "%D", ""))
+							if SlotNumber ~= nil then
+								Log(
+									"debug",
+									"Item Info",
+									`Name: {Item.name}, Rarity: {Item.rarity}, Number: {SlotNumber}`
+								)
 
-								if ItemSlot ~= nil then
-									Log(
-										"debug",
-										`Item Name: {Item.name}, Rarity: {Item.rarity}, Slot Number: {ItemSlot}`
-									)
-
+								if not Config.LobbySettings.AutoSell.TestSell then
 									Remotes:WaitForChild("sellItemEvent"):FireServer({
 										[1] = {
 											["chest"] = {},
-											["helmet"] = { ItemSlot },
+											["helmet"] = { SlotNumber },
 											["ability"] = {},
 											["ring"] = {},
 											["weapon"] = {},
 										},
 									})
 								else
-									Log("info", `Test Sell: {Item.name}`)
+									Log("info", "Test Sell", Item.name)
 								end
 							end
 						elseif
@@ -235,18 +235,18 @@ local function Sell()
 							and not Item.effects
 							and not Item.favorite
 						then
-							if not Config.LobbySettings.AutoSell.TestSell then
-								local ItemSlot = tonumber(string.gsub(index, "%D", ""))
+							local SlotNumber = tonumber(string.gsub(index, "%D", ""))
+							if SlotNumber ~= nil then
+								Log(
+									"debug",
+									"Item Info",
+									`Name: {Item.name}, Rarity: {Item.rarity}, Number: {SlotNumber}`
+								)
 
-								if ItemSlot ~= nil then
-									Log(
-										"debug",
-										`Item Name: {Item.name}, Rarity: {Item.rarity}, Slot Number: {ItemSlot}`
-									)
-
+								if not Config.LobbySettings.AutoSell.TestSell then
 									Remotes:WaitForChild("sellItemEvent"):FireServer({
 										[1] = {
-											["chest"] = { ItemSlot },
+											["chest"] = { SlotNumber },
 											["helmet"] = {},
 											["ability"] = {},
 											["ring"] = {},
@@ -254,30 +254,30 @@ local function Sell()
 										},
 									})
 								else
-									Log("info", `Test Sell: {Item.name}`)
+									Log("info", "Test Sell", Item.name)
 								end
 							end
 						elseif FolderName == "rings" and not Item.favorite and Item.effects then
-							if not Config.LobbySettings.AutoSell.TestSell then
-								local ItemSlot = tonumber(string.gsub(index, "%D", ""))
+							local SlotNumber = tonumber(string.gsub(index, "%D", ""))
+							if SlotNumber ~= nil then
+								Log(
+									"debug",
+									"Item Info",
+									`Name: {Item.name}, Rarity: {Item.rarity}, Number: {SlotNumber}`
+								)
 
-								if ItemSlot ~= nil then
-									Log(
-										"debug",
-										`Item Name: {Item.name}, Rarity: {Item.rarity}, Slot Number: {ItemSlot}`
-									)
-
+								if not Config.LobbySettings.AutoSell.TestSell then
 									Remotes:WaitForChild("sellItemEvent"):FireServer({
 										[1] = {
 											["chest"] = {},
 											["helmet"] = {},
 											["ability"] = {},
-											["ring"] = { ItemSlot },
+											["ring"] = { SlotNumber },
 											["weapon"] = {},
 										},
 									})
 								else
-									Log("info", `Test Sell: {Item.name}`)
+									Log("info", "Test Sell", Item.name)
 								end
 							end
 						end
@@ -297,26 +297,26 @@ local function Sell()
 							and Item.levelReq < Config.LobbySettings.AutoSell.ItemLevelRequirement
 						then
 							if Config.LobbySettings.AutoSell.Keep2Spells and List[Item.name] > 2 then
-								if not Config.LobbySettings.AutoSell.TestSell then
-									local ItemSlot = tonumber(string.gsub(index, "%D", ""))
+								local SlotNumber = tonumber(string.gsub(index, "%D", ""))
+								if SlotNumber ~= nil then
+									Log(
+										"debug",
+										"Item Info",
+										`Name: {Item.name}, Rarity: {Item.rarity}, Number: {SlotNumber}`
+									)
 
-									if ItemSlot ~= nil then
-										Log(
-											"debug",
-											`Item Name: {Item.name}, Rarity: {Item.rarity}, Slot Number: {ItemSlot}`
-										)
-
+									if not Config.LobbySettings.AutoSell.TestSell then
 										Remotes:WaitForChild("sellItemEvent"):FireServer({
 											[1] = {
 												["chest"] = {},
 												["helmet"] = {},
-												["ability"] = { ItemSlot },
+												["ability"] = { SlotNumber },
 												["ring"] = {},
 												["weapon"] = {},
 											},
 										})
 									else
-										Log("info", `Test Sell: {Item.name}`)
+										Log("info", "Test Sell", Item.name)
 									end
 								end
 							end
