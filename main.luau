@@ -86,7 +86,7 @@ local Config = {
 		},
 		AutoSell = {
 			Enabled = true,
-			TestSell = true,
+			TestSell = false,
 			ItemLevelRequirement = 216,
 			Keep2Spells = true,
 			KeepRarities = {
