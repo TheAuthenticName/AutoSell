@@ -194,7 +194,7 @@ local function Sell()
 											["helmet"] = {},
 											["ability"] = {},
 											["ring"] = {},
-											["weapon"] = { SlotNumber },
+											["weapon"] = SlotNumber,
 										},
 									})
 								else
@@ -219,7 +219,7 @@ local function Sell()
 									Remotes:WaitForChild("sellItemEvent"):FireServer({
 										[1] = {
 											["chest"] = {},
-											["helmet"] = { SlotNumber },
+											["helmet"] = SlotNumber,
 											["ability"] = {},
 											["ring"] = {},
 											["weapon"] = {},
@@ -246,7 +246,7 @@ local function Sell()
 								if not Config.LobbySettings.AutoSell.TestSell then
 									Remotes:WaitForChild("sellItemEvent"):FireServer({
 										[1] = {
-											["chest"] = { SlotNumber },
+											["chest"] = SlotNumber,
 											["helmet"] = {},
 											["ability"] = {},
 											["ring"] = {},
@@ -272,7 +272,7 @@ local function Sell()
 											["chest"] = {},
 											["helmet"] = {},
 											["ability"] = {},
-											["ring"] = { SlotNumber },
+											["ring"] = SlotNumber,
 											["weapon"] = {},
 										},
 									})
@@ -310,7 +310,7 @@ local function Sell()
 											[1] = {
 												["chest"] = {},
 												["helmet"] = {},
-												["ability"] = { SlotNumber },
+												["ability"] = SlotNumber,
 												["ring"] = {},
 												["weapon"] = {},
 											},
