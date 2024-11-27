@@ -998,6 +998,9 @@ if game.PlaceId == 2414851778 then
 										"Auto Accept Requests",
 										`Found {RequesterName} In The Joiner Accounts Table`
 									)
+
+									task.wait(2)
+
 									DataEvent:FireServer({
 										{
 											{
@@ -1047,6 +1050,9 @@ if game.PlaceId == 2414851778 then
 									"Auto Request Party",
 									`Found {Config.LobbySettings.GameCreation.MultiFarm.HostAccount}'s Party`
 								)
+
+								task.wait(3)
+
 								DataEvent:FireServer({
 									{
 										{
