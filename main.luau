@@ -1001,20 +1001,20 @@ if game.PlaceId == 2414851778 then
 
 									task.wait(2)
 
-									DataEvent:FireServer({
-										{
-											{
-												"\1",
-												{
-													requestId = request.id,
+									DataEvent:FireServer(unpack({
+										[1] = {
+											[1] = {
+												[1] = "\1",
+												[2] = {
+													["requestId"] = request.id,
 													["\3"] = "HandleJoinRequest",
-													requestUsername = RequesterName,
-													requestAction = true,
+													["requestUsername"] = RequesterName,
+													["requestAction"] = true,
 												},
 											},
-											"\158",
+											[2] = "\158",
 										},
-									})
+									}))
 									Log("dev", "Auto Request", `Accepted {RequesterName} Join Request`)
 								else
 									Log(
@@ -1053,18 +1053,18 @@ if game.PlaceId == 2414851778 then
 
 								task.wait(3)
 
-								DataEvent:FireServer({
-									{
-										{
-											"\1",
-											{
+								DataEvent:FireServer(unpack({
+									[1] = {
+										[1] = {
+											[1] = "\1",
+											[2] = {
 												["\3"] = "RequestJoin",
-												partyId = Party.id,
+												["partyId"] = Party.id,
 											},
 										},
-										"\158",
+										[2] = "\158",
 									},
-								})
+								}))
 							else
 								Log(
 									"dev",
