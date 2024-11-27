@@ -1049,7 +1049,10 @@ if game.PlaceId == 2414851778 then
 							Log("dev", "Auto Request Party", "Party Was Not Nil")
 
 							for a, b in pairs(Party.members) do
-								print(a, b)
+								print(a)
+								for k, l in pairs(b) do
+									print(k, l)
+								end
 							end
 
 							task.wait(1)
