@@ -41,6 +41,9 @@ function webhookLibrary.createMessage(properties)
             ["title"] = title,
             ["color"] = tonumber(color),
             ["description"] = description,
+            ["footer"] = {
+                ["text"] = "Spectra"
+            },
             ["fields"] = {}
         })
         local embedFunctions = {}
