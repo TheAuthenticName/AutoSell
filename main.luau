@@ -192,10 +192,10 @@ if game.PlaceId == 2414851778 then
 			while FoundAccounts == false do
 				task.wait(1)
 
-				for _, player in pairs(Config.LobbySettings.GameCreation.MultiFarm.JoinerAccounts) do
-					if not JoinerAccounts[player] then
-						if Workspace:FindFirstChild(player) then
-							JoinerAccounts[player] = true
+				for _, playerName in pairs(Config.LobbySettings.GameCreation.MultiFarm.JoinerAccounts) do
+					if not table.find(JoinerAccounts, playerName) then
+						if Workspace:FindFirstChild(playerName) then
+							table.insert(JoinerAccounts, playerName)
 						end
 					end
 				end
