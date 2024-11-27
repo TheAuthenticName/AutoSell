@@ -945,7 +945,7 @@ if game.PlaceId == 2414851778 then
 		-- Finding The Host Account
 		if Player.Name == Config.LobbySettings.GameCreation.MultiFarm.HostAccount then
 			Log("dev", "Auto Party", `{Player.Name} Is The Host`)
-			local JoinerAccountsTbl, Mode = {}, nil
+			local JoinerAccountsTbl, MembersTbl, Mode = {}, {}, nil
 
 			-- Setting The Joiner Accounts
 			for _, name in pairs(Config.LobbySettings.GameCreation.MultiFarm.JoinerAccounts) do
@@ -1015,6 +1015,7 @@ if game.PlaceId == 2414851778 then
 											[2] = "\158",
 										},
 									}))
+									table.insert(MembersTbl, RequesterName)
 									Log("dev", "Auto Request", `Accepted {RequesterName} Join Request`)
 								else
 									Log(
@@ -1030,6 +1031,13 @@ if game.PlaceId == 2414851778 then
 					end
 				end
 			end)
+
+			repeat
+				task.wait()
+			until #MembersTbl == #Config.LobbySettings.GameCreation.MultiFarm.JoinerAccounts
+
+			-- Start Dungeon
+			Log("dev", "Auto Party", "All The Members Have Joined")
 		else
 			Log("dev", "Auto Party", `{Player.Name} Is A Joiner`)
 
@@ -1039,6 +1047,12 @@ if game.PlaceId == 2414851778 then
 						local Party = v.party
 						if Party then
 							Log("dev", "Auto Request Party", "Party Was Not Nil")
+
+							for a, b in pairs(Party.members) do
+								print(a, b)
+							end
+
+							task.wait(1)
 							if
 								string.find(Party.name, Config.LobbySettings.GameCreation.MultiFarm.HostAccount)
 								and Party.dungeon == Config.LobbySettings.GameCreation.DungeonSettings.Dungeon
