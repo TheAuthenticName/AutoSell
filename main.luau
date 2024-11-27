@@ -1036,8 +1036,20 @@ if game.PlaceId == 2414851778 then
 				task.wait()
 			until #MembersTbl == #Config.LobbySettings.GameCreation.MultiFarm.JoinerAccounts
 
-			-- Start Dungeon
 			Log("dev", "Auto Party", "All The Members Have Joined")
+
+			-- Start Dungeon
+			DataEvent:FireServer(unpack({
+				[1] = {
+					[1] = {
+						[1] = "\1",
+						[2] = {
+							["\3"] = "StartParty",
+						},
+					},
+					[2] = "\158",
+				},
+			}))
 		else
 			Log("dev", "Auto Party", `{Player.Name} Is A Joiner`)
 
