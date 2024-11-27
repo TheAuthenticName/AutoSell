@@ -184,6 +184,36 @@ local function CalculateCost(totalUpgrades: number, currentUpgrades: number): nu
 end
 
 if game.PlaceId == 2414851778 then
+	-- Waits For All Joiner Accounts To Be Loaded If Player Is The Host Account
+	if Config.LobbySettings.GameCreation.MultiFarm.Enabled then
+		if Player.Name == Config.LobbySettings.GameCreation.MultiFarm.HostAccount then
+			local JoinerAccounts, FoundAccounts = {}, false
+
+			while FoundAccounts == false do
+				task.wait(1)
+
+				for _, name in pairs(Config.LobbySettings.GameCreation.MultiFarm.JoinerAccounts) do
+					if not JoinerAccounts[name] then
+						if Workspace:FindFirstChild(name) then
+							JoinerAccounts[name] = true
+						end
+					end
+				end
+
+				if #JoinerAccounts == #Config.LobbySettings.GameCreation.MultiFarm.JoinerAccounts then
+					Log("dev", "Auto Start", "Found All Joiner Accounts")
+					FoundAccounts = true
+				else
+					Log("dev", "Auto Start", "Haven't Found All Joiner Accounts Yet")
+				end
+			end
+		else
+			Log("dev", "Auto Start", `{Player.Name} Is Not Host`)
+		end
+	else
+		Log("dev", "Auto Start", "Multi Farm Is Disabled")
+	end
+
 	-- Check For Character
 	if Workspace:FindFirstChild(Player.Name) == nil then
 		-- Press Play
