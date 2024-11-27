@@ -192,10 +192,10 @@ if game.PlaceId == 2414851778 then
 			while FoundAccounts == false do
 				task.wait(1)
 
-				for _, name in pairs(Config.LobbySettings.GameCreation.MultiFarm.JoinerAccounts) do
-					if not JoinerAccounts[name] then
-						if Workspace:FindFirstChild(name) then
-							JoinerAccounts[name] = true
+				for _, player in pairs(Config.LobbySettings.GameCreation.MultiFarm.JoinerAccounts) do
+					if not JoinerAccounts[player] then
+						if Workspace:FindFirstChild(player) then
+							JoinerAccounts[player] = true
 						end
 					end
 				end
@@ -205,6 +205,7 @@ if game.PlaceId == 2414851778 then
 					FoundAccounts = true
 				else
 					Log("dev", "Auto Start", "Haven't Found All Joiner Accounts Yet")
+					print(#JoinerAccounts)
 				end
 			end
 		else
