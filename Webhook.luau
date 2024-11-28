@@ -42,7 +42,7 @@ function webhookLibrary.createMessage(properties)
             ["color"] = tonumber(color),
             ["description"] = description,
             ["footer"] = {
-                ["text"] = "Spectra"
+                ["text"] = "Spectra | Some Random Text"
             },
             ["fields"] = {}
         })
