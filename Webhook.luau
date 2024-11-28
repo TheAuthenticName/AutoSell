@@ -1,11 +1,3 @@
---[[
-
-Made by griffin
-Discord: @griffindoescooking
-Github: https://github.com/idonthaveoneatm
-
-]]--
-
 local webhookLibrary = {}
 local HttpService = cloneref(game:GetService("HttpService"))
 local request = request or httprequest or http_request
